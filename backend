@@ -1,1 +1,2 @@
-
+SELECT * FROM database_name
+WHERE distance BETWEEN 50 AND 60;
