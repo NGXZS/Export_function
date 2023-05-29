@@ -1,6 +1,7 @@
 # Export_function
 
 *pagination*
+https://codewithmukesh.com/blog/pagination-in-aspnet-core-webapi/
 (clear explanation, but diff format) https://www.bing.com/videos/search?q=pagination+web+core+api+tutorial&&view=detail&mid=456956190DA940A0B52C456956190DA940A0B52C&&FORM=VRDGAR&ru=%2Fvideos%2Fsearch%3Fq%3Dpagination%2520web%2520core%2520api%2520tutorial%26qs%3Dn%26form%3DQBVR%26%3D%2525eManage%2520Your%2520Search%2520History%2525E%26sp%3D-1%26lq%3D0%26pq%3Dpagination%2520web%2520cre%2520api%2520tutorial%26sc%3D10-31%26sk%3D%26cvid%3D42D6ABEDA5BF4C99B066C0F03A1758D6%26ghsh%3D0%26ghacc%3D0%26ghpl%3D
 (silent) https://www.youtube.com/watch?v=sJcn52-2VVw
 
