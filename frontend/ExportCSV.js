@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { CSVLink } from "react-csv"; //npm i react-csv
+import React, { useState } from 'react';
+import { CSVLink } from "react-csv";
 import "./ExportCSV.css";  // see https://surajsharma.net/blog/react-create-csv-file
+import DataTable from 'react-data-table-component';
 
 const ExportCSV = () => {
     const headers = [ // key must follow key of data, label is wtv you want
@@ -20,14 +21,8 @@ const ExportCSV = () => {
         headers: headers,
         data: fileData
     });
-/*
-    useEffect(() => { 
-        setCSVReport();
-    },[fileData]);
-*/
+
     const handleDataFetch = () => { 
-        // `https://localhost:44365/api/Book?PageNumber=1&PageSize=${pageSize}` 
-        // "https://localhost:44365/api/Book?PageNumber=1&PageSize=3"
         return fetch(`https://localhost:44365/api/Book?PageNumber=${pageNumber}&PageSize=${pageSize}`)
         .then(response => response.json())
         .then((json) => {
@@ -38,30 +33,56 @@ const ExportCSV = () => {
             setFileData(arr);
             console.log("pageSize is:");
             console.log(pageSize);
-            handleCSVReport();
-            //reset setPageNumber & setPageSize
+            //handleCSVReport();
         });
     }  
+    
     const handleCSVReport = () => {
         setCSVReport({
             ...CSVReport, //copies old fields
             data: fileData});
-        console.log("fileData is : ")
-        console.log(fileData);
+            console.log("fileData is : ");
+            console.log(fileData);
     }
-   
+    
     return (
         <div>
             <h3>Export to CSV</h3>
-            <h2>Reference link. </h2>
+            <h2>Export Feature </h2>
             <label>Page Size: </label>
             <input placeholder="pageSize" value={pageSize} onChange={(e) => setPageSize(e.target.value)} />
             <label>Page Number: </label>
-            <input placeholder="pageNumber" value={pageNumber} onChange={(e) => setPageNumber(e.target.value)} />
-            <button onClick={handleDataFetch}>Confirm</button>
-            <CSVLink onClick={handleDataFetch}{...CSVReport}>
+            <input placeholder="pageNumber" value={pageNumber} onChange={(e) => setPageNumber(e.target.value)} />   
+            <button onClick={handleDataFetch}>Show</button>
+            <CSVLink {...CSVReport}> //takes in wtv is in CSVReport
             <button onClick={handleCSVReport}>Export</button>
-            </CSVLink>       
+            </CSVLink> 
+            <div> //shows data we are selecting
+                <table>
+                    <thead>
+                        <tr>
+                            {headers.map((object) => {
+                                return(
+                                    <th>{object.label}</th>
+                                )
+                            })}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {fileData.map((row) =>{
+                            return(
+                                <tr>
+                                    <td>{row.id}</td>
+                                    <td>{row.startDis}</td>
+                                    <td>{row.endDis}</td>
+                                    <td>{row.string1}</td>
+                                    <td>{row.string2}</td>
+                                </tr>
+                            )
+                        })}
+                    </tbody>
+                </table>
+                </div>     
         </div >
     );
 }
