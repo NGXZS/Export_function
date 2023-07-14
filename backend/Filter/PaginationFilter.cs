@@ -7,12 +7,12 @@
         public PaginationFilter()
         {
             this.PageNumber = 1;
-            this.PageSize = 10;
+            this.PageSize = 20;
         }
         public PaginationFilter(int pageNumber, int pageSize)
         {
             this.PageNumber = pageNumber < 1 ? 1 : pageNumber; // min pageNumber = 1
-            this.PageSize = pageSize > 10 ? 10 : pageSize; //max PageSize = 10
+            this.PageSize = pageSize > 20 ? 20 : pageSize; //max PageSize = 20
         }
     }
 }
