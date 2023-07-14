@@ -3,7 +3,7 @@ using PWAY_ASPNetCore_WebAPI.Filter;
 
 namespace PWAY_ASPNetCore_WebAPI.Services
 {
-    public class UriService : IUriService // to get GetPageUri function
+    public class UriService : IUriService // to get GetPageUri function from IUriService Repository
     {
         private readonly string _baseUri; // get base URL via Dependency Injection in Program.cs
         public UriService(string baseUri)
