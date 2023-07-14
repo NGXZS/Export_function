@@ -1,6 +1,6 @@
 ﻿namespace PWAY_ASPNetCore_WebAPI.Wrappers
 {
-    public class Respond<T> // include more info in data packet
+    public class Respond<T> // creating data packet eg with success, error messages
     {
         public Respond() { }
         public Respond(T data) 
