@@ -4,7 +4,7 @@ using PWAY_ASPNetCore_WebAPI.Wrappers;
 
 namespace PWAY_ASPNetCore_WebAPI.Helpers
 {
-    public class PaginationHelper //implements UriService (creation of Uri) + instead of all in BookController
+    public class PaginationHelper //implements UriService (creation of Uri) to avoid coding everything in BookController //not sure how to implement
     {
         public static PagedRespond<List<T>> CreatePagedRespond<T>(
             List<T> pagedData, PaginationFilter validFilter, 
