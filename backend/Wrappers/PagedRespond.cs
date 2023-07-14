@@ -7,6 +7,7 @@
         public Uri FirstPage { get; set; }
         public Uri LastPage { get; set; }
 
+        // pagination properties
         public int TotalPages { get; set; }
         public int TotalRecords { get; set; }
         public Uri NextPage { get; set; }
